@@ -72,3 +72,12 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 /AR_battleship/Library/Artifacts
 /AR_battleship/Library
+/AR_battleship/UserSettings
+/AR_battleship/Temp
+/AR_battleship/Logs
+/AR_battleship/Library
+/AR_battleship/Library
+/AR_battleship/Library/Bee
+AR_battleship/Library/ArtifactDB
+/AR_battleship/ProjectSettings
+/AR_battleship/Library

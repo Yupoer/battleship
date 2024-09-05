@@ -1,5 +1,22 @@
 # This .gitignore file should be placed at the root of your Unity project directory
 #
+
+
+
+# Temporary auto-generated Android Assets
+/[Aa]ssets/[Ss]treamingAssets/aa.meta
+/[Aa]ssets/[Ss]treamingAssets/aa/*
+/AR_battleship/Library/Artifacts
+/AR_battleship/Library
+AR_battleship/Library/ArtifactDB
+/AR_battleship/Temp
+/AR_battleship/Logs
+/AR_battleship/Library/Bee
+/AR_battleship/Library/Bee
+/AR_battleship/Library
+
+
+
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
 /[Ll]ibrary/
@@ -67,9 +84,4 @@ crashlytics-build.properties
 # Packed Addressables
 /[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 
-# Temporary auto-generated Android Assets
-/[Aa]ssets/[Ss]treamingAssets/aa.meta
-/[Aa]ssets/[Ss]treamingAssets/aa/*
-/AR_battleship/Library/Artifacts
-/AR_battleship/Library
-AR_battleship/Library/ArtifactDB
+

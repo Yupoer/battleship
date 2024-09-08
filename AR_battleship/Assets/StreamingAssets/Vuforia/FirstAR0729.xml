@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
   <Tracking>
+    <ImageTarget name="papaper" size="1.000000 0.736353" />
     <CylinderTarget name="auto" sideLength="0.210000"/>
   </Tracking>
 </QCARConfig>

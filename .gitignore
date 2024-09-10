@@ -71,13 +71,15 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 /AR_battleship/Library/Artifacts
-/AR_battleship/Library
 /AR_battleship/UserSettings
 /AR_battleship/Temp
 /AR_battleship/Logs
-/AR_battleship/Library
 /AR_battleship/Library
 /AR_battleship/Library/Bee
 AR_battleship/Library/ArtifactDB
 /AR_battleship/Library
 AR_battleship/Packages/com.ptc.vuforia.engine-10.25.4.tgz
+/AR_battleship/Library
+/touching/Packages/com.ptc.vuforia.engine-10.25.4.tgz
+/touching/Library/ArtifactDB
+/touching/Library

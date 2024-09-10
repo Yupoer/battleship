@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+  <Tracking>
+    <ImageTarget name="score" size="0.100000 0.072180" />
+    <ImageTarget name="240869407_1728664900659419_618196305341553224_n" size="1.000000 1.333333" />
+    <CylinderTarget name="cola" sideLength="0.075000"/>
+  </Tracking>
+</QCARConfig>

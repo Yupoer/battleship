@@ -4,38 +4,43 @@ using Vuforia;
 
 public class CustomObserverEventHandler : DefaultObserverEventHandler
 {
-    public Slider loadingBar; // 讀條的 UI 元素
-    public float loadingTime = 1f; // 讀條持續時間
+    public Slider loadingBar; //  UI
+    public float loadingTime = 1f; // loading time in seconds
     private bool isTrackingLost = false;
     private float timer = 0f;
     private float lastLoggedProgress = 0f;
+    private bool stopRepeatLoop = false;
 
     protected override void OnTrackingLost()
     {
         base.OnTrackingLost();
-        Debug.Log("Target lost, starting loading bar...");
+        Debug.Log("Target lost");
         isTrackingLost = true;
-        loadingBar.gameObject.SetActive(true); // 顯示讀條
+        loadingBar.gameObject.SetActive(true); 
         timer = 0f;
-        lastLoggedProgress = 0f; // 重置
+        lastLoggedProgress = 0f; // reset
+        stopRepeatLoop = false;
     }
 
     protected override void OnTrackingFound()
     {
         base.OnTrackingFound();
         isTrackingLost = false;
-        Debug.Log("Target Found");
+        Debug.Log("Target Found, starting loading bar...");
     }
 
     private void Update()
     {
-        if (isTrackingLost)
+        if (!isTrackingLost && !stopRepeatLoop)
         {
             timer += Time.deltaTime;
-            float progress = timer / loadingTime;
+            float progress = Mathf.Clamp01(timer / loadingTime);
             loadingBar.value = progress;
 
-            // 新的 10% 增量
+            // 將進度更新到 ProgressManager
+            ProgressManager.Instance.UpdateProgress(progress);
+
+            // new +20% 
             if (progress - lastLoggedProgress >= 0.1f)
             {
                 Debug.Log("Loading progress: " + (progress * 100).ToString("F0") + "%");
@@ -44,18 +49,17 @@ public class CustomObserverEventHandler : DefaultObserverEventHandler
 
             if (timer >= loadingTime)
             {
-                // 讀條結束，觸發自定義事件
+                // end of loading
                 Debug.Log("Loading complete, triggering event...");
                 TriggerCustomEvent();
-                isTrackingLost = false;
-                loadingBar.gameObject.SetActive(false); // 隱藏讀條
+                loadingBar.gameObject.SetActive(false); 
+                stopRepeatLoop = true;
             }
         }
     }
 
     private void TriggerCustomEvent()
     {
-        // 在這裡觸發你自定義的事件
         Debug.Log("event start");
     }
 }
